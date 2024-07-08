@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="patient" author="dev" context="data">
+        <insert tableName="patient">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Çağla"/>
+            <column name="surname" value="Kaplan"/>
+            <column name="age" value="22"/>
+            <column name="IDENTITY_NUM" value="31766297090"/>
+
+
+        </insert>
+        <insert tableName="patient">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Utku"/>
+            <column name="surname" value="Kaplan"/>
+            <column name="age" value="32"/>
+            <column name="IDENTITY_NUM" value="31766297091"/>
+
+
+        </insert>
+        <insert tableName="patient">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Chuck"/>
+            <column name="surname" value="Bass"/>
+            <column name="age" value="17"/>
+            <column name="IDENTITY_NUM" value="31766297092"/>
+
+        </insert>
+    </changeSet>
+</databaseChangeLog>
