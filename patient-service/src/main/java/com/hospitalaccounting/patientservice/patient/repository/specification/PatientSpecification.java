@@ -26,21 +26,21 @@ public class PatientSpecification {
             if (pageRequestDTO.getSearchCriteria().containsKey("name")) {
                 String name = (String) pageRequestDTO.getSearchCriteria().get("name");
                 if (name != null && !name.isEmpty()) {
-                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get(Patient_.NAME), name));
+                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get(Patient_.NAME), "%" + name + "%"));
                 }
             }
 
             if (pageRequestDTO.getSearchCriteria().containsKey("surname")) {
                 String surname = (String) pageRequestDTO.getSearchCriteria().get("surname");
                 if (surname != null && !surname.isEmpty()) {
-                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get(Patient_.SURNAME), surname));
+                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get(Patient_.SURNAME), "%"+surname+"%"));
                 }
             }
 
             if (pageRequestDTO.getSearchCriteria().containsKey("identityNum")) {
                 String identityNum = (String) pageRequestDTO.getSearchCriteria().get("identityNum");
                 if (identityNum != null && !identityNum.isEmpty()) {
-                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get(Patient_.IDENTITY_NUM), identityNum));
+                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get(Patient_.IDENTITY_NUM), identityNum+"%"));
                 }
             }
 

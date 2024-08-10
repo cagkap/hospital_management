@@ -11,4 +11,8 @@ import java.util.List;
 @Repository
 public interface PatientRepository extends PagingAndSortingRepository<Patient, Long>, JpaSpecificationExecutor<Patient> {
     List<Patient> findAll();
+
+    boolean existsByIdentityNum(String identityNum);
+
+    void save(Patient patient);
 }

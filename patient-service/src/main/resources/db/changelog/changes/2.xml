@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2 15.07.2024 10:00" author="cagla.kaplan" context="sql">
+<sql>
+    ALTER TABLE patient ADD COLUMN INSERTION_DATE TIMESTAMP  NOT NULL DEFAULT now();
+    ALTER TABLE patient ADD COLUMN STATUS VARCHAR(6)  NOT NULL DEFAULT 'ACTIVE';
+
+</sql>
+    </changeSet>
+</databaseChangeLog>

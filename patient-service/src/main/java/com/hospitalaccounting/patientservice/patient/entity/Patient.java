@@ -1,11 +1,14 @@
 package com.hospitalaccounting.patientservice.patient.entity;
 
 
+import com.hospitalaccounting.patientservice.common.enums.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -40,4 +43,10 @@ public class Patient{
 
     @Column(name="ADDRESS")
     private String address;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS")
+    private Status status;
+
+
 }
